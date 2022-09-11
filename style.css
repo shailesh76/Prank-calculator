@@ -2,52 +2,78 @@ body{
     margin: 0;
     font-size: 1.1rem;
 }
+* {
+   box-sizing: border-box;
+}
 .wrapper {
 min-height: 100vh;
-background:#CC2B5E ;
-
+background:#CC2B5E;
 display: flex;
+
 justify-content: center;
 align-items: center;
 }
 
+.calculator {
+   background: rgba(80, 165, 187, 0.5);
+   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+   border-radius: 50px;
+   width: 400px;
+   color: black;
+   padding: 2rem 1.5rem;
+   border-radius: 5px;
 
-.calculator{
-background:#50A5BB;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
- border-radius: 50px;
-width: 752px;
- height: 885px;
-}
+   display: grid;
+   gap: 1rem;
+   
+
 grid-template-areas:
 "display display display display"
-"small  small  percentage ac"
-"7 8 9 divide"
-"4 5 6 multiply"
-"1 2 3 subtract"
-"0 dot equals add"
+"small  bracket  perc ac"
+"btn7 btn8 btn9 divide"
+"btn4 btn5 btn6 btnx"
+"btn1 btn2 btn3 subtract"
+"btn0 dot equals add";
+
+position: relative;
+backdrop-filter: blur(10px);
+}
 
 .calculator div{
-width: 100px;
-height: 100px;
+   
+/* width: 50px;  */
+height: 50px;
+background: #F5F5F5;
 display: flex;
 justify-content: center;
 align-items: center;
 }
  .display {
+   background: #F5F5F5;
+      box-shadow: 10px 4px 4px rgba(0, 0, 0, 0.25);
+      border-radius: 14px;
     grid-area:display;
-
  }
+
+.calculator div.display {
+   font-family: 'Digital-7', arial;
+   grid-area: display;
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+  }
+   .btn{
+   box-shadow: 10px 4px 4px rgba(0, 0, 0, 0.25);
+   }
  .btn-Small  {
-    grid-area:small;
+    grid-area: Small;
+ }
+ .btn-bracket  {
+    grid-area: bracket;
 
  }
- .btn-Small  {
-    grid-area:small;
-
- }
- .btn-precentage{
-    grid-area:percentage;
+ .btn-prec {
+    grid-area: perc;
 
  }
  .btn-ac{
@@ -71,27 +97,32 @@ align-items: center;
 
  }
  .btn-4{
-    grid-area:4;
+    grid-area:btn4;
 
  }
  .btn-5{
-    grid-area:5;
+    grid-area:btn5;
+    
+    }
+   .btn-6{
+ grid-area: btn6;
+    }
+ 
 
- }
- .btn-multiply{
-    grid-area:multiply;
+ .btn-x{
+    grid-area:btnx;
 
  }
  .btn-1{
-    grid-area:1;
+    grid-area:btn1;
 
  }
  .btn-2{
-    grid-area:2;
+    grid-area:btn2;
 
  }
  .btn-3{
-    grid-area:3;
+    grid-area:btn3;
 
  }
  .btn-subtract{
@@ -114,4 +145,17 @@ align-items: center;
  .btn-add {
     grid-area:add;
 
+ }
+
+ .circle {
+background: #DE6262;
+   opacity: 0.95;
+   box-shadow: inset 0px 10px 4px -1px rgba(0, 0, 0, 0.25);
+         width: 250px;
+         height: 250px;
+         border-radius: 50%;
+         position: relative;
+         left: 150px;
+            top: 200px;
+          
  }
